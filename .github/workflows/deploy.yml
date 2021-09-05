@@ -30,8 +30,9 @@ jobs:
         # If you have non-minimal setup with some assets and separate html/js files,
         # provide --output=<output-file> option for `elm make` and remove this step
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
