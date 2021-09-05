@@ -1,3 +1,3 @@
 # PhotoGroove
 
-elm book practice
+Practicing with the examples from Elm In Action
